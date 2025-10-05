@@ -1,0 +1,126 @@
+﻿
+@{
+    ViewBag.Title = "login";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login with OTP</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            width: 300px;
+        }
+
+            .login-container h2 {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+        input[type="tel"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 6px;
+            background: #28a745;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+            button:disabled {
+                background: #ccc;
+            }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <h2>Login with OTP</h2>
+
+        <!-- ✅ Mobile number input -->
+        <input type="tel" id="mobile" placeholder="Enter 10-digit Mobile Number" maxlength="10">
+        <button onclick="sendOTP()">Send OTP</button>
+
+        <!-- OTP input -->
+        <!--<input type="number" id="otp" placeholder="Enter OTP">
+        <button onclick="verifyOTP()">Login</button>-->
+    </div>
+</body>
+</html>
+<script src="~/Scripts/jquery-3.7.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    function sendOTP() {
+        const mobileNo = document.getElementById("mobile").value;
+        if (mobileNo.length === 10 && /^\d{10}$/.test(mobileNo)) {
+            //Swal.fire({
+            //    //title: "Good job!",
+            //    text: "OTP sent to " + mobileNo,
+            //    icon: "success"
+            //});
+            // 👇 Call backend here
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                url: "/login/GetloginOtp",
+                data: JSON.stringify({ mobileNo: mobileNo }),
+                dataType: "json",
+                success: function (response) {
+                    var res = response.split('-');
+                    if (res[0] == "True") {
+                        Swal.fire({
+                            title: res[2],
+                            confirmButtonColor: "#004990"
+                        }).then(() => {
+                            window.location.href = "/Login/Verification";
+                        });
+                    }
+                    else {
+                        Swal.fire({
+                            title: res[1],
+                            confirmButtonColor: "#004990"
+                        }).then(() => {
+                            window.location.href = "/Login/Verification";
+                        });
+                    }
+                },
+            });
+        } else {
+            Swal.fire({
+                icon: 'warning',
+                title: 'Invalid Mobile Number',
+                text: 'Please enter a valid 10-digit mobile number.'
+            });
+            return;
+        }
+    }
+
+
+
+   
+</script>

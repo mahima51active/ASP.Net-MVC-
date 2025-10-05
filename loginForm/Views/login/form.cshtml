@@ -1,0 +1,71 @@
+﻿
+@{
+    ViewBag.Title = "";
+}
+
+@*<h2>form</h2>*@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Form</title>
+    @*<link rel="stylesheet" href="style.c*@
+    <link href="~/styling/StyleSheet1.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form action="#" method="post">
+            <div class="form-group">
+                <label for="email">USER ID</label>
+                <input type="text"  id="userid" name="userid" placeholder="Enter your userid" required />
+             </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required />
+            </div>
+
+            <button type="submit" onclick="Login(this)" class="btn">Login</button>
+
+            <p class="forgot">Forgot your password? <a href="#">Click here</a></p>
+        </form>
+    </div>
+</body>
+</html>
+<script src="~/Scripts/jquery-3.7.0.min.js"></script>
+<script>
+    function login(obj) {
+        let userid = document.getElementById('userid').value;
+        let password = document.getElementById('password').value;
+
+        //if userid == "" || userid == null {
+           
+        //}
+        $.ajax({
+            type: "POST",
+            url: '@Url.Action("login", "check")', // controller action
+            data: {
+                userid: userid,
+                password: password
+            },
+            success: function (response) {
+                alert("Login Successful");
+                // Optionally redirect:
+                // window.location.href = "/Home/Index";
+            },
+            error: function (xhr, status, error) {
+                alert("Login failed: " + error);
+            }
+        });
+    }
+
+
+
+</script>
+
+
+
+
+

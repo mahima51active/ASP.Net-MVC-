@@ -1,0 +1,154 @@
+﻿@{
+    Layout = null;
+}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Registration Form</title>
+    <link href="~/stnrel/student.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <h2>Student Registration Form</h2>
+        <form>
+
+            <!-- Personal Information -->
+            <div class="form-section">
+                <h4>Personal Information</h4>
+                <div class="row">
+                    <div class="form-group col-50">
+                        <label>First Name</label>
+                        <input type="text" required />
+                    </div>
+                    <div class="form-group col-50">
+                        <label>Last Name</label>
+                        <input type="text" required />
+                    </div>
+                    <div class="form-group col-50">
+                        <label>Date of Birth</label>
+                        <input type="date" required />
+                    </div>
+                    <div class="form-group col-50">
+                        <label>Gender</label>
+                        <select required>
+                            <option value="">Select</option>
+                            <option>Male</option>
+                            <option>Female</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-50">
+                        <label>Aadhar Number</label>
+                        <input type="text" maxlength="12" required />
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="form-section">
+                <h4>Contact Information</h4>
+                <div class="row">
+                    <div class="form-group col-50">
+                        <label>Email</label>
+                        <input type="email" required />
+                    </div>
+                    <div class="form-group col-50">
+                        <label>Phone Number</label>
+                        <input type="tel" required />
+                    </div>
+                    <div class="form-group col-100">
+                        <label>Address</label>
+                        <textarea rows="2" required></textarea>
+                    </div>
+                    <div class="form-group col-50">
+                        <label>City</label>
+                        <input type="text" />
+                    </div>
+                    <div class="form-group col-50">
+                        <label>State</label>
+                        <input type="text" />
+                    </div>
+                    <div class="form-group col-50">
+                        <label>Zip Code</label>
+                        <input type="text" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- Academic Details -->
+            <div class="form-section">
+                <h4>Academic Details</h4>
+                <div class="row">
+                    <div class="form-group col-50">
+                        <label>High School (10th) %</label>
+                        <input type="text" />
+                    </div>
+                    <div class="form-group col-50">
+                        <label>Intermediate (12th) %</label>
+                        <input type="text" />
+                    </div>
+                    <div class="form-group col-50">
+                        <label>Graduation (UG)</label>
+                        <input type="text" />
+                    </div>
+                    <div class="form-group col-50">
+                        <label>Post-Graduation (PG)</label>
+                        <input type="text" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course Details -->
+            <div class="form-section">
+                <h4>Course Selection</h4>
+                <div class="row">
+                    <div class="form-group col-50">
+                        <label>Course</label>
+                        <select required>
+                            <option value="">Select</option>
+                            <option>B.Sc</option>
+                            <option>B.Com</option>
+                            <option>B.A</option>
+                            <option>M.Sc</option>
+                            <option>MBA</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-50">
+                        <label>Academic Session</label>
+                        <input type="text" placeholder="e.g. 2025-2026" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- Document Upload -->
+            <div class="form-section">
+                <h4>Document Upload</h4>
+                <div class="row">
+                    <div class="form-group col-50">
+                        <label>Upload Photo</label>
+                        <input type="file" />
+                    </div>
+                    <div class="form-group col-50">
+                        <label>Upload ID Proof</label>
+                        <input type="file" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- Terms and Submit -->
+            <div class="form-section">
+                <div class="form-check">
+                    <input type="checkbox" required />
+                    <label>I confirm that the above information is true.</label>
+                </div>
+                <br />
+                <button type="submit">Submit Registration</button>
+            </div>
+
+        </form>
+    </div>
+</body>
+</html>
+

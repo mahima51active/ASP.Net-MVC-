@@ -1,0 +1,303 @@
+﻿@using System.Data;
+@using System.Data.SqlClient;
+@{
+    ViewBag.Title = "AddProduct";
+    Layout = null;
+}
+
+@{ 
+    string txtcategory = "";
+    string txtproductid = "";
+    string txtproduct = "";
+    string txtbarcode = "";
+    string txtmrp = "";
+    string txtrate = "";
+    string txtunit = "";
+}
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .form-container {
+            background: #fff;
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 350px;
+        }
+
+            .form-container h2 {
+                text-align: center;
+                margin-bottom: 20px;
+                color: #333;
+            }
+
+        form label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        form input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: border 0.3s ease;
+        }
+
+            form input:focus {
+                border-color: #007bff;
+                outline: none;
+            }
+
+        form button {
+            width: 100%;
+            padding: 10px;
+            background: #007bff;
+            border: none;
+            color: #fff;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+            form button:hover {
+                background: #0056b3;
+            }
+
+        #result {
+            margin-top: 10px;
+            text-align: center;
+            color: green;
+            font-weight: bold;
+        }
+
+        .select-wrapper {
+            position: relative;
+            width: 100%;
+        }
+
+            .select-wrapper::after {
+                content: "▼";
+                position: absolute;
+                top: 50%;
+                right: 10px;
+                transform: translateY(-50%);
+                pointer-events: none;
+                color: #555;
+                font-size: 12px;
+            }
+        form select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background: #fff;
+            font-size: 14px;
+            color: #333;
+            transition: border 0.3s ease;
+            appearance: none; /* Removes default browser arrow styling */
+            -webkit-appearance: none;
+            -moz-appearance: none;
+        }
+
+            form select:focus {
+                border-color: #007bff;
+                outline: none;
+            }
+
+            form select option {
+                padding: 8px;
+            }
+
+#txtmrp{
+    text-align:right;
+}
+
+#txtrate{
+    text-align:right;
+}
+
+    </style>
+
+</head>
+<body>
+    <div class="form-container">
+        <h2>Product Entry Form</h2>
+        <form id="productForm">
+            <label for="category" value="txtcategory">Category Name</label>
+       
+            <div class="select-wrapper">
+                <select id="category" name="CategoryName" onchange="getNextProductCode(this.value)">
+                    <option value="">-- Select Category --</option>
+                    @foreach (System.Data.DataRow row in ((System.Data.DataTable)ViewBag.catdat).Rows)
+                    {
+                        <option value="@row["Category_id"]">@row["Category_Name"]</option>
+                    }
+                </select>
+            </div>
+
+            <label for="productid">Product Code</label>
+            <input type="text" id="productid" value="txtproductid" name="ProductCode" placeholder="Enter product code" readonly>
+
+            <label for="txtproduct">Product Name</label>
+            <input type="text" id="txtproduct" name="ProductName" placeholder="Enter product name">
+
+            <label for="txtbarcode">Barcode</label>
+            <input type="text" id="txtbarcode" name="Barcode" placeholder="Enter barcode">
+
+            <label for="txtmrp">MRP</label>
+            <input type="text" id="txtmrp" name="MRP" placeholder="Enter MRP" oninput="allowDecimal(this)">
+
+            <label for="txtrate">Rate</label>
+            <input type="text" id="txtrate" name="Rate" placeholder="Enter rate" oninput="allowDecimal(this)">
+
+            <label for="txtunit">Unit</label>
+            <input type="text" id="txtunit" name="Unit" placeholder="Enter unit">
+
+            <button type="button" onclick="InsertDetails()">Save</button>
+        </form>
+        <div id="result"></div>
+    </div>
+</body>
+</html>
+<script src="~/Scripts/jquery-3.7.0.min.js"></script>
+<script>
+    function getNextProductCode(categoryId) {
+        $.ajax({
+            url: '/product/getCategoryCode', // Update with your actual controller name
+            type: 'GET',
+            data: { cat_id: categoryId },
+            success: function (response) {
+                // Set value into readonly field
+                $('#productid').val(response.product_code);
+            },
+            error: function () {
+                alert("Error fetching product code");
+            }
+        });
+    }
+
+    function allowDecimal(el) {
+        // 1) sirf digits aur dot rakho
+        let v = el.value.replace(/[^0-9.]/g, '');
+
+        // 2) ek se zyada dot ho to sirf pehli dot rakho
+        const parts = v.split('.');
+        if (parts.length > 2) {
+            v = parts[0] + '.' + parts.slice(1).join('').replace(/\./g, ''); // baki dots hatao
+        }
+
+        // 3) optional: leading zeros clean (except "0." case)
+        if (v.startsWith('00')) {
+            v = v.replace(/^0+/, '0');
+        }
+
+        el.value = v;
+    }
+
+    //function InsertDetails() {
+
+    //    let catname = document.getElementById('category').value.trim();
+    //    let productcode = document.getElementById('productid').value.trim();
+    //    let productname = document.getElementById('txtproductid').value.trim();
+    //    let barcode = document.getElementById('txtbarcode').value.trim();
+    //    let mrp = document.getElementById('txtmrp').value.trim();
+    //    let rate = document.getElementById('txtrate').value.trim();
+    //    let unit = documnet.getElementById('txtunit').value.trim();
+
+    //    let productdata = {
+    //        catname: catname,
+    //        productcode: productcode,
+    //        productname: productname,
+    //        barcode: barcode,
+    //        mrp: mrp,
+    //        rate: rate,
+    //        unit: unit
+    //    }
+
+    //    $.ajax({
+    //        url: '/product/ProductInsert', // Update with your actual controller name
+    //        type: 'Post',
+    //        data: productdata,
+    //        success: function (response) {
+    //             Set value into readonly field
+    //            $('#productForm').val(response.product_code);
+    //        },
+    //        error: function () {
+    //            alert("Error fetching product code");
+    //        }
+    //    });
+
+    //}
+
+    function InsertDetails() {
+        let catname = document.getElementById('category').value.trim();
+        let productcode = document.getElementById('productid').value.trim();
+        let productname = document.getElementById('txtproduct').value.trim(); // Corrected
+        let barcode = document.getElementById('txtbarcode').value.trim();
+        let mrp = document.getElementById('txtmrp').value.trim();
+        let rate = document.getElementById('txtrate').value.trim();
+        let unit = document.getElementById('txtunit').value.trim(); // Corrected
+
+        if (catname === "") { alert("Please select a category."); return; }
+
+        if (barcode === "" || productname === "") {
+            alert("Please enter barcode or enter your product name."); return;} 
+       
+        //if (unit === "" || isNaN(unit) || parseFloat(unit) <= 0) {
+        //    alert("Please enter a valid Unit (decimal number greater than 0).");
+        //    return;
+        //}
+
+        let productdata = {
+            catname: catname,
+            productcode: productcode,
+            productname: productname,
+            barcode: barcode,
+            mrp: mrp,
+            rate: rate,
+            unit: unit
+        };
+
+        $.ajax({
+            url: '/product/ProductInsert',
+            type: 'POST',
+            data: productdata,
+            success: function (response) {
+                // Set value into productid field if response has product_code
+                if (response && response.product_code) {
+                    $('#productid').val(response.product_code);
+                }
+                alert("Product saved successfully!");
+            },
+            error: function () {
+                alert("Error while saving product.");
+            }
+        });
+    }
+
+</script>

@@ -1,0 +1,153 @@
+﻿@using System.Data;
+@using System.Data.SqlClient;
+@{
+    ViewBag.Title = "form";
+    Layout = null;
+}
+@{
+    string userid = "0";
+    string txtfullname = "";
+    string txtaddress = "";
+    string txtphone = "";
+    string txtemail = "";
+    string txtdob = "";
+    string txtcourse = "";
+    string txtgender = "";
+
+    DataTable data = ViewBag.edit as DataTable;
+
+    if (ViewBag.id != null && data != null && data.Rows.Count > 0)
+    {
+        DataRow row = data.Rows[0];
+
+        userid = row["userid"].ToString();
+        txtfullname = row["fullname"].ToString();
+        txtemail = row["email"].ToString();
+        txtaddress = row["address"].ToString();
+        //txtdob = row["dob"].ToString();
+        txtdob = row["DOB1"].ToString();
+        txtcourse = row["course"].ToString();
+        txtphone = row["phone"].ToString();
+        txtgender = row["gender"].ToString();
+    }
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Registration Form</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: #fff;
+            max-width: 500px;
+            margin: auto;
+            padding: 30px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .gender {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+            .gender input {
+                margin-top: 5px;
+            }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+
+            button:hover {
+                background-color: #45a049;
+            }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Student Registration Form</h2>
+        <form id="data">
+            <label for="fullname">Full Name</label>
+            <input type="text" id="fullname" name="fullname" value="@txtfullname" required>
+            <input type="hidden" id="userid" value="@userid">
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" value="@txtemail" required>
+
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" value="@txtphone" required>
+
+            <label>Gender</label>
+            <div class="gender" id="gender">
+            <label><input type="radio" name="gender" value="male" @(txtgender == "male" ? "checked" : "")> Male</label>
+            <label><input type="radio" name="gender" value="female" @(txtgender == "female" ? "checked" : "")> Female</label>
+        </div>
+
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob" name="dob" value="@txtdob" required>
+
+            <label for="course">Course</label>
+            <select id="course" name="course" value="@txtcourse">
+                <option value="btech" @(txtcourse == "btech" ? "selected" : "")>B.Tech</option>
+                <option value="bca"   @(txtcourse == "bca" ? "selected" : "")>BCA</option>
+                <option value="bsc"   @(txtcourse == "bsc" ? "selected" : "")>B.Sc</option>
+                <option value="mba"   @(txtcourse == "mba" ? "selected" : "")>MBA</option>
+            </select>
+
+            <label for="address">Address</label>
+            <textarea id="address" name="address" value="@txtaddress" rows="4">@txtaddress</textarea>
+
+            <button type="submit" id="submit">submit</button>
+        </form>
+    </div>
+</body>
+</html>
+<script src="~/Scripts/jquery-3.7.0.min.js"></script>
+<script src="~/Scripts/JavaScript.js"></script>

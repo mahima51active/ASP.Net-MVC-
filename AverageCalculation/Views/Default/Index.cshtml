@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Fitness Test";
+}
+
+<h2>Enter Oxygen Levels</h2>
+
+<form method="post">
+    <table class="table table-bordered">
+        <tr>
+            <th>Trainee</th>
+            <th>Round 1</th>
+            <th>Round 2</th>
+            <th>Round 3</th>
+        </tr>
+        @for (int i = 0; i < 3; i++)
+        {
+            <tr>
+                <td>Trainee @(i + 1)</td>
+                @for (int j = 0; j < 3; j++)
+                {
+                    <td><input type="number" name="oxygenLevels[@i][@j]" required /></td>
+                }
+            </tr>
+        }
+    </table>
+    <button type="submit" class="btn btn-primary">Calculate</button>
+</form>
+

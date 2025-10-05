@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dynamic Structure</title>
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+
+</head>
+<body>
+
+    <div class="container mt-4">
+        <h2>Dynamic Structure</h2>
+
+        <div class="parent-div mb-3 d-flex justify-content-center">
+            <!-- Styled "+" button -->
+            <button type="button" class="btn btn-primary btn-sm fw-bold" onclick="BindStructure()">
+                + Add Section
+            </button>
+        </div>
+
+        <div class="inputfield" id="section"></div>
+    </div>
+
+    <script>
+        let counter = 1;
+
+        function BindStructure() {
+            const html = `
+            <div class="structure mb-3 p-3 border rounded bg-light position-relative" id="structure-${counter}">
+                
+                <!-- Remove Button -->
+                <button type="button" class="btn-close position-absolute top-0 end-0 m-2" aria-label="Close" onclick="removeStructure('structure-${counter}')"></button>
+                
+                <h5 class="mb-3">Structure ${counter}</h5>
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <input type="text" class="form-control" name="education-${counter}" placeholder="Education" />
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" class="form-control" name="marks-${counter}" placeholder="Marks" />
+                    </div>
+                </div>
+            </div>
+        `;
+
+            $('#section').append(html);
+            //document.getElementById('section').append(html);
+            counter++;
+        }
+
+        function removeStructure(id) {
+            $('#' + id).remove();
+        }
+    </script>
+
+</body>
+</html>

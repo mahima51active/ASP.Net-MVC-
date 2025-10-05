@@ -1,0 +1,10 @@
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="p-4 bg-light rounded">
+    <h1 class="h3">Earthquake Visualization (ASP.NET MVC 5)</h1>
+    <p class="mb-1">Live data (last 24h) from USGS displayed in a table & interactive map.</p>
+    <p class="text-muted small">Prediction real-life में accurate possible नहीं है; यह demo visualization purpose के लिए है.</p>
+    <a class="btn btn-primary btn-sm" href="@Url.Action("Recent","Earthquake")">View Recent Earthquakes</a>
+</div>

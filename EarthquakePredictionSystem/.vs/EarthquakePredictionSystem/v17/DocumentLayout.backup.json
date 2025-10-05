@@ -1,0 +1,181 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\My projects\\EarthquakePredictionSystem\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4B9207D0-5B1A-42E5-9F93-4D6E56F0A5E9}|EarthquakePredictionSystem\\EarthquakePredictionSystem.csproj|d:\\my projects\\earthquakepredictionsystem\\earthquakepredictionsystem\\views\\earthquake\\recent.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4B9207D0-5B1A-42E5-9F93-4D6E56F0A5E9}|EarthquakePredictionSystem\\EarthquakePredictionSystem.csproj|solutionrelative:earthquakepredictionsystem\\views\\earthquake\\recent.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B9207D0-5B1A-42E5-9F93-4D6E56F0A5E9}|EarthquakePredictionSystem\\EarthquakePredictionSystem.csproj|d:\\my projects\\earthquakepredictionsystem\\earthquakepredictionsystem\\global.asax||{4D30FDB3-AB3E-4810-B6F2-64627BCCA384}",
+      "RelativeMoniker": "D:0:0:{4B9207D0-5B1A-42E5-9F93-4D6E56F0A5E9}|EarthquakePredictionSystem\\EarthquakePredictionSystem.csproj|solutionrelative:earthquakepredictionsystem\\global.asax||{4D30FDB3-AB3E-4810-B6F2-64627BCCA384}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B9207D0-5B1A-42E5-9F93-4D6E56F0A5E9}|EarthquakePredictionSystem\\EarthquakePredictionSystem.csproj|d:\\my projects\\earthquakepredictionsystem\\earthquakepredictionsystem\\app_start\\routeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4B9207D0-5B1A-42E5-9F93-4D6E56F0A5E9}|EarthquakePredictionSystem\\EarthquakePredictionSystem.csproj|solutionrelative:earthquakepredictionsystem\\app_start\\routeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B9207D0-5B1A-42E5-9F93-4D6E56F0A5E9}|EarthquakePredictionSystem\\EarthquakePredictionSystem.csproj|d:\\my projects\\earthquakepredictionsystem\\earthquakepredictionsystem\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4B9207D0-5B1A-42E5-9F93-4D6E56F0A5E9}|EarthquakePredictionSystem\\EarthquakePredictionSystem.csproj|solutionrelative:earthquakepredictionsystem\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B9207D0-5B1A-42E5-9F93-4D6E56F0A5E9}|EarthquakePredictionSystem\\EarthquakePredictionSystem.csproj|d:\\my projects\\earthquakepredictionsystem\\earthquakepredictionsystem\\controllers\\earthquakecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4B9207D0-5B1A-42E5-9F93-4D6E56F0A5E9}|EarthquakePredictionSystem\\EarthquakePredictionSystem.csproj|solutionrelative:earthquakepredictionsystem\\controllers\\earthquakecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B9207D0-5B1A-42E5-9F93-4D6E56F0A5E9}|EarthquakePredictionSystem\\EarthquakePredictionSystem.csproj|d:\\my projects\\earthquakepredictionsystem\\earthquakepredictionsystem\\models\\usgsgeojsonresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4B9207D0-5B1A-42E5-9F93-4D6E56F0A5E9}|EarthquakePredictionSystem\\EarthquakePredictionSystem.csproj|solutionrelative:earthquakepredictionsystem\\models\\usgsgeojsonresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B9207D0-5B1A-42E5-9F93-4D6E56F0A5E9}|EarthquakePredictionSystem\\EarthquakePredictionSystem.csproj|d:\\my projects\\earthquakepredictionsystem\\earthquakepredictionsystem\\models\\earthquakemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4B9207D0-5B1A-42E5-9F93-4D6E56F0A5E9}|EarthquakePredictionSystem\\EarthquakePredictionSystem.csproj|solutionrelative:earthquakepredictionsystem\\models\\earthquakemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B9207D0-5B1A-42E5-9F93-4D6E56F0A5E9}|EarthquakePredictionSystem\\EarthquakePredictionSystem.csproj|d:\\my projects\\earthquakepredictionsystem\\earthquakepredictionsystem\\services\\earthquakeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4B9207D0-5B1A-42E5-9F93-4D6E56F0A5E9}|EarthquakePredictionSystem\\EarthquakePredictionSystem.csproj|solutionrelative:earthquakepredictionsystem\\services\\earthquakeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B9207D0-5B1A-42E5-9F93-4D6E56F0A5E9}|EarthquakePredictionSystem\\EarthquakePredictionSystem.csproj|d:\\my projects\\earthquakepredictionsystem\\earthquakepredictionsystem\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{4B9207D0-5B1A-42E5-9F93-4D6E56F0A5E9}|EarthquakePredictionSystem\\EarthquakePredictionSystem.csproj|solutionrelative:earthquakepredictionsystem\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B9207D0-5B1A-42E5-9F93-4D6E56F0A5E9}|EarthquakePredictionSystem\\EarthquakePredictionSystem.csproj|d:\\my projects\\earthquakepredictionsystem\\earthquakepredictionsystem\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{4B9207D0-5B1A-42E5-9F93-4D6E56F0A5E9}|EarthquakePredictionSystem\\EarthquakePredictionSystem.csproj|solutionrelative:earthquakepredictionsystem\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\My projects\\EarthquakePredictionSystem\\EarthquakePredictionSystem\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "EarthquakePredictionSystem\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\My projects\\EarthquakePredictionSystem\\EarthquakePredictionSystem\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "EarthquakePredictionSystem\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-19T12:55:50.552Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Web.config",
+              "DocumentMoniker": "D:\\My projects\\EarthquakePredictionSystem\\EarthquakePredictionSystem\\Web.config",
+              "RelativeDocumentMoniker": "EarthquakePredictionSystem\\Web.config",
+              "ToolTip": "D:\\My projects\\EarthquakePredictionSystem\\EarthquakePredictionSystem\\Web.config",
+              "RelativeToolTip": "EarthquakePredictionSystem\\Web.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-07-19T12:39:07.499Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "README.md",
+              "DocumentMoniker": "D:\\My projects\\EarthquakePredictionSystem\\EarthquakePredictionSystem\\README.md",
+              "RelativeDocumentMoniker": "EarthquakePredictionSystem\\README.md",
+              "ToolTip": "D:\\My projects\\EarthquakePredictionSystem\\EarthquakePredictionSystem\\README.md",
+              "RelativeToolTip": "EarthquakePredictionSystem\\README.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2025-07-19T12:39:05.734Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Global.asax",
+              "DocumentMoniker": "D:\\My projects\\EarthquakePredictionSystem\\EarthquakePredictionSystem\\Global.asax",
+              "RelativeDocumentMoniker": "EarthquakePredictionSystem\\Global.asax",
+              "ToolTip": "D:\\My projects\\EarthquakePredictionSystem\\EarthquakePredictionSystem\\Global.asax",
+              "RelativeToolTip": "EarthquakePredictionSystem\\Global.asax",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000179|",
+              "WhenOpened": "2025-07-19T12:39:02.162Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Recent.cshtml",
+              "DocumentMoniker": "D:\\My projects\\EarthquakePredictionSystem\\EarthquakePredictionSystem\\Views\\Earthquake\\Recent.cshtml",
+              "RelativeDocumentMoniker": "EarthquakePredictionSystem\\Views\\Earthquake\\Recent.cshtml",
+              "ToolTip": "D:\\My projects\\EarthquakePredictionSystem\\EarthquakePredictionSystem\\Views\\Earthquake\\Recent.cshtml",
+              "RelativeToolTip": "EarthquakePredictionSystem\\Views\\Earthquake\\Recent.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-19T12:32:33.908Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "EarthquakeService.cs",
+              "DocumentMoniker": "D:\\My projects\\EarthquakePredictionSystem\\EarthquakePredictionSystem\\Services\\EarthquakeService.cs",
+              "RelativeDocumentMoniker": "EarthquakePredictionSystem\\Services\\EarthquakeService.cs",
+              "ToolTip": "D:\\My projects\\EarthquakePredictionSystem\\EarthquakePredictionSystem\\Services\\EarthquakeService.cs",
+              "RelativeToolTip": "EarthquakePredictionSystem\\Services\\EarthquakeService.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-19T12:32:25.72Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "USGSGeoJsonResponse.cs",
+              "DocumentMoniker": "D:\\My projects\\EarthquakePredictionSystem\\EarthquakePredictionSystem\\Models\\USGSGeoJsonResponse.cs",
+              "RelativeDocumentMoniker": "EarthquakePredictionSystem\\Models\\USGSGeoJsonResponse.cs",
+              "ToolTip": "D:\\My projects\\EarthquakePredictionSystem\\EarthquakePredictionSystem\\Models\\USGSGeoJsonResponse.cs",
+              "RelativeToolTip": "EarthquakePredictionSystem\\Models\\USGSGeoJsonResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-19T12:32:22.695Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "EarthquakeModel.cs",
+              "DocumentMoniker": "D:\\My projects\\EarthquakePredictionSystem\\EarthquakePredictionSystem\\Models\\EarthquakeModel.cs",
+              "RelativeDocumentMoniker": "EarthquakePredictionSystem\\Models\\EarthquakeModel.cs",
+              "ToolTip": "D:\\My projects\\EarthquakePredictionSystem\\EarthquakePredictionSystem\\Models\\EarthquakeModel.cs",
+              "RelativeToolTip": "EarthquakePredictionSystem\\Models\\EarthquakeModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-19T12:32:20.954Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "EarthquakeController.cs",
+              "DocumentMoniker": "D:\\My projects\\EarthquakePredictionSystem\\EarthquakePredictionSystem\\Controllers\\EarthquakeController.cs",
+              "RelativeDocumentMoniker": "EarthquakePredictionSystem\\Controllers\\EarthquakeController.cs",
+              "ToolTip": "D:\\My projects\\EarthquakePredictionSystem\\EarthquakePredictionSystem\\Controllers\\EarthquakeController.cs",
+              "RelativeToolTip": "EarthquakePredictionSystem\\Controllers\\EarthquakeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-19T12:32:14.297Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RouteConfig.cs",
+              "DocumentMoniker": "D:\\My projects\\EarthquakePredictionSystem\\EarthquakePredictionSystem\\App_Start\\RouteConfig.cs",
+              "RelativeDocumentMoniker": "EarthquakePredictionSystem\\App_Start\\RouteConfig.cs",
+              "ToolTip": "D:\\My projects\\EarthquakePredictionSystem\\EarthquakePredictionSystem\\App_Start\\RouteConfig.cs",
+              "RelativeToolTip": "EarthquakePredictionSystem\\App_Start\\RouteConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-19T12:28:52.102Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

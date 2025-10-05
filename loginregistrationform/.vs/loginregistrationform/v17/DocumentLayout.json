@@ -1,0 +1,87 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\My projects\\loginregistrationform\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3600C93E-768A-40A7-B9DC-9CD00FEEC5EE}|loginregistrationform.csproj|D:\\My projects\\loginregistrationform\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3600C93E-768A-40A7-B9DC-9CD00FEEC5EE}|loginregistrationform.csproj|solutionrelative:controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3600C93E-768A-40A7-B9DC-9CD00FEEC5EE}|loginregistrationform.csproj|D:\\My projects\\loginregistrationform\\views\\home\\about.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3600C93E-768A-40A7-B9DC-9CD00FEEC5EE}|loginregistrationform.csproj|solutionrelative:views\\home\\about.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3600C93E-768A-40A7-B9DC-9CD00FEEC5EE}|loginregistrationform.csproj|d:\\my projects\\loginregistrationform\\logics\\feature.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{3600C93E-768A-40A7-B9DC-9CD00FEEC5EE}|loginregistrationform.csproj|solutionrelative:logics\\feature.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3600C93E-768A-40A7-B9DC-9CD00FEEC5EE}|loginregistrationform.csproj|D:\\My projects\\loginregistrationform\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3600C93E-768A-40A7-B9DC-9CD00FEEC5EE}|loginregistrationform.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "feature.js",
+              "DocumentMoniker": "D:\\My projects\\loginregistrationform\\logics\\feature.js",
+              "RelativeDocumentMoniker": "logics\\feature.js",
+              "ToolTip": "D:\\My projects\\loginregistrationform\\logics\\feature.js",
+              "RelativeToolTip": "logics\\feature.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEwAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-06-25T16:59:08.369Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "About.cshtml",
+              "DocumentMoniker": "D:\\My projects\\loginregistrationform\\Views\\Home\\About.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\About.cshtml",
+              "ToolTip": "D:\\My projects\\loginregistrationform\\Views\\Home\\About.cshtml",
+              "RelativeToolTip": "Views\\Home\\About.cshtml",
+              "ViewState": "AgIAAOEAAAAAAAAAAAAAAOEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-25T16:45:48.069Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\My projects\\loginregistrationform\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "D:\\My projects\\loginregistrationform\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AgIAAA8AAACAmZmZmZkVwEwAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-24T13:19:59.789Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "loginController.cs",
+              "DocumentMoniker": "D:\\My projects\\loginregistrationform\\Controllers\\loginController.cs",
+              "RelativeDocumentMoniker": "Controllers\\loginController.cs",
+              "ToolTip": "D:\\My projects\\loginregistrationform\\Controllers\\loginController.cs",
+              "RelativeToolTip": "Controllers\\loginController.cs",
+              "ViewState": "AgIAAAMAAABYZmZmZmYkwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-24T13:19:51.427Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

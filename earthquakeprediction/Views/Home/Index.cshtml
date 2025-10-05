@@ -1,0 +1,39 @@
+﻿@model earthquakeprediction.Models.EarthquakeViewModel
+
+@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <h2>Welcome to Earthquake Prediction System</h2>
+    <p><a href="@Url.Action("Recent", "Earthquake")" class="btn btn-primary">View Recent Earthquakes</a></p>
+</div>
+@using (Html.BeginForm("Index", "Home", FormMethod.Get))
+{
+    <label>Select Country:</label> 
+    @Html.DropDownListFor(m => m.SelectedCountry, new SelectList(Model.CountryList), "All Countries", new { onchange = "this.form.submit();" })
+}
+
+<table>
+    <thead class="main">
+        <tr>
+            <th>Place</th>
+            <th>Magnitude</th>
+            <th>Country</th>
+            <th>Local Time</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var quake in Model.EarthquakeResults)
+        {
+            <tr>
+                <td>@quake.Location</td>
+                <td>@quake.Magnitude</td>
+                <td>@quake.Country</td>
+                <td>@quake.LocalDateTime.ToString("g")</td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+

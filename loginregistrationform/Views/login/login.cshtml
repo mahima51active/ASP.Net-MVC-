@@ -1,0 +1,80 @@
+﻿
+@{
+    ViewBag.Title = "login";
+}
+
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <style>
+        body {
+            background: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+
+        .login-box {
+            width: 350px;
+            margin: 100px auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+            .login-box h2 {
+                text-align: center;
+                margin-bottom: 25px;
+                color: #333;
+            }
+
+            .login-box input[type="text"],
+            .login-box input[type="password"] {
+                width: 100%;
+                padding: 12px;
+                margin: 8px 0 20px 0;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+
+            .login-box input[type="submit"] {
+                width: 100%;
+                padding: 12px;
+                background-color: #28a745;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                font-size: 16px;
+            }
+
+                .login-box input[type="submit"]:hover {
+                    background-color: #218838;
+                }
+
+        .message {
+            text-align: center;
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-box">
+        <h2>Login Form</h2>
+        <form method="post" action="/login/login">
+            <input type="text" name="username" placeholder="Username" required />
+            <input type="password" name="password" placeholder="Password" required />
+            <input type="submit" value="Login" />
+        </form>
+        @if (ViewBag.Message != null)
+        {
+            <div class="message">@ViewBag.Message</div>
+        }
+    </div>
+</body>
+</html>
+

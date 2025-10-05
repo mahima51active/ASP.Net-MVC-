@@ -1,0 +1,210 @@
+﻿@using System;
+@using System.Data;
+@{
+    ViewBag.Title = "report";
+
+}
+@{ 
+    string student_id = "";
+    string first_name = "";
+    string last_name = "";
+    string dob = "";
+    string email = "";
+    string phone = "";
+    string city = "";
+    string state = "";
+    string address = "";
+
+    DataTable data = ViewBag.update as DataTable;
+    if (ViewBag.id != null && data != null && data.Rows.Count > 0)
+    {
+        DataRow row = data.Rows[0];
+
+
+        student_id = row["STUDENT_ID"].ToString();
+        first_name = row["FIRST_NAME"].ToString();
+        last_name = row["LAST_NAME"].ToString();
+        dob = row["DATE_BIRTH"].ToString();
+        //gender = row["GENDER"].ToString();
+        //adhar_num = row["ADHAR_NUM"].ToString();
+        phone = row["PHONE_NUM"].ToString();
+        email = row["EMAIL"].ToString();
+        address = row["ADDRESS"].ToString();
+        city = row["CITY"].ToString();
+        state = row["STATE"].ToString();
+        //zip_code = row["ZIP_CODE"].ToString();
+        //ssc_marks = row["SSC_MARKS"].ToString();
+        //hsc_marks = row["HSC_MARKS"].ToString();
+        //ug_marks = row["UG_MARKS"].ToString();
+        //pg_marks = row["PG_MARKS"].ToString();
+        //course = row["COURSE"].ToString();
+        //session = row["SESSION"].ToString();
+        //hobbies = row["HOBBIES"].ToString();
+
+
+
+
+    }
+
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Student Registration Form</title>
+    <link href="~/styling-folder/features.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="container">
+        <h1>Student Registration Form</h1>
+        <form>
+
+            <!-- Personal Information -->
+            <fieldset>
+                <legend>Personal Information</legend>
+
+                <div class="form-group">
+                    @*<label for="studentId">Student ID</label>*@
+                    <input type="hidden"  value="@student_id" id="studentId" >
+                </div>
+
+                <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" value="@first_name" id="firstName" >
+
+
+                    <label for="lastName">Last Name</label>
+                    <input type="text" value="@last_name" id="lastName" >
+                </div>
+
+                <div class="form-group">
+                    <label for="dob">Date of Birth</label>
+                    <input type="date" value="@dob" id="dob" >
+                </div>
+
+                <div class="form-group">
+                    <label>Gender</label>
+                    <div class="radio-group gender">
+                        <label><input type="radio" name="gender" id = "male"  value="male" > Male</label>
+                        <label><input type="radio" name="gender" id = "female" value="female" > Female</label>
+                        <label><input type="radio" name="gender" id = "other" value="other" > Other</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="adhar">Adhar Number</label>
+                    <input type="text" maxlength="12" id="adhar" >
+                </div>
+            </fieldset>
+
+            <!-- Contact Information -->
+            <fieldset>
+                <legend>Contact Information</legend>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" value="@phone" maxlength="10" id="phone" >
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" value="@email" id="email" >
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <textarea id="address" rows="3" ></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="city">City</label>
+                    <input type="text" value="@city" id="city" >
+                </div>
+
+                <div class="form-group">
+                    <label for="state">State</label>
+                    <input type="text" value="@state" id="state" >
+                </div>
+
+                <div class="form-group">
+                    <label for="zip">ZIP Code</label>
+                    <input type="text" id="zip" >
+                </div>
+            </fieldset>
+
+            <!-- Academic Details -->
+            <fieldset>
+                <legend>Academic Details</legend>
+
+                <div class="form-group">
+                    <label for="ssc">SSC Marks (%)</label>
+                    <input type="number" id="ssc" >
+                </div>
+
+                <div class="form-group">
+                    <label for="hsc">HSC Marks (%)</label>
+                    <input type="number" id="hsc" >
+                </div>
+
+                <div class="form-group">
+                    <label for="ug">UG Marks (%)</label>
+                    <input type="number" id="ug">
+                </div>
+
+                <div class="form-group">
+                    <label for="pg">PG Marks (%)</label>
+                    <input type="number" id="pg">
+                </div>
+            </fieldset>
+
+            <!-- Course Details -->
+            <fieldset>
+                <legend>Course Details</legend>
+
+                <div class="form-group">
+                    <label for="course">Course</label>
+                    <select id="course" >
+                        <option value="">Select Course</option>
+                        <option>BCA</option>
+                        <option>MCA</option>
+                        <option>B.Tech</option>
+                        <option>M.Tech</option>
+                        <option>B.Sc</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="session">Session</label>
+                    <input type="text" id="session" placeholder="e.g. 2024-2026" >
+                </div>
+
+                <div class="form-group">
+                    <label>Hobbies</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="hobby" value="Reading"> Reading</label>
+                        <label><input type="checkbox" name="hobby" value="Music"> Music</label>
+                        <label><input type="checkbox" name="hobby" value="Traveling"> Traveling</label>
+                        <label><input type="checkbox" name="hobby" value="Sports"> Sports</label>
+                    </div>
+                </div>
+            </fieldset>
+
+            <!-- Submit -->
+            <div class="form-group">
+                <button type="submit" id="click">Submit</button>
+            </div>
+
+        </form>
+    </div>
+
+</body>
+</html>
+
+<script src="~/Scripts/jquery-3.7.0.min.js"></script>
+<script src="~/styling-folder/logics.js"></script>
+
+

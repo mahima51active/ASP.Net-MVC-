@@ -1,0 +1,12 @@
+﻿
+@{
+    ViewBag.Title = "Result";
+}
+
+<h2>Most Fit Trainee(s)</h2>
+<p><strong>Highest Average Oxygen Level:</strong> @ViewBag.HighestAvg</p>
+<p>@Html.Raw(ViewBag.FitTrainees)</p>
+
+<a href="@Url.Action("Index", "Fitness")" class="btn btn-secondary">Back</a>
+
+

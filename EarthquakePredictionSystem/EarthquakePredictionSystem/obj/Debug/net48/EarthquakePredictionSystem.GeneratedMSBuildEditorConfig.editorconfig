@@ -1,0 +1,8 @@
+is_global = true
+build_property.RootNamespace = EarthquakePredictionSystem
+build_property.ProjectDir = D:\My projects\EarthquakePredictionSystem\EarthquakePredictionSystem\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.CsWinRTUseWindowsUIXamlProjections = false
+build_property.EffectiveAnalysisLevelStyle = 
+build_property.EnableCodeStyleSeverity = 

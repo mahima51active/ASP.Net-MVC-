@@ -1,0 +1,5 @@
+D:\My projects\EarthquakePredictionSystem\EarthquakePredictionSystem\obj\Debug\net48\EarthquakePredictionSystem.csproj.AssemblyReference.cache
+D:\My projects\EarthquakePredictionSystem\EarthquakePredictionSystem\obj\Debug\net48\EarthquakePredictionSystem.GeneratedMSBuildEditorConfig.editorconfig
+D:\My projects\EarthquakePredictionSystem\EarthquakePredictionSystem\obj\Debug\net48\EarthquakePredictionSystem.AssemblyInfoInputs.cache
+D:\My projects\EarthquakePredictionSystem\EarthquakePredictionSystem\obj\Debug\net48\EarthquakePredictionSystem.AssemblyInfo.cs
+D:\My projects\EarthquakePredictionSystem\EarthquakePredictionSystem\obj\Debug\net48\EarthquakePredictionSystem.csproj.CoreCompileInputs.cache

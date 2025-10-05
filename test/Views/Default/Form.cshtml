@@ -1,0 +1,144 @@
+﻿@using System.Data;
+@using System.Data.SqlClient;
+@{
+    ViewBag.Title = "Form";
+    Layout = null;
+}
+
+@{
+    string userid = "0";
+    string txtfullname = "";
+    string txtphone = "";
+    string txtcity = "";
+    string txtstate = "";
+    string txtemail = "";
+    string txtgender = "";
+    string txtcourse = "";
+    string txtpassword = "";
+
+    DataTable data = ViewBag.edit as DataTable;
+
+    if (ViewBag.id != null && data != null && data.Rows.Count > 0)
+    {
+        DataRow row = data.Rows[0];
+
+        userid = row["userid"].ToString();
+        txtfullname = row["fullname"].ToString();
+        txtemail = row["email"].ToString();
+        txtcity = row["city"].ToString();
+        txtstate = row["state"].ToString();
+        txtgender = row["gender"].ToString();
+        txtcourse = row["course"].ToString();
+        txtpassword = row["password"].ToString();
+    }
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Registration Form</title>
+    @*<link rel="stylesheet" href="style.css">*@
+</head>
+<body>
+    <style>
+        /* style.css */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            background-color: white;
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-top: 15px;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        input, select {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 12px;
+            background-color: #28a745;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+            button:hover {
+                background-color: #218838;
+            }
+    </style>
+
+    <div class="container">
+        <h2>Student Registration Form</h2>
+        <form action="#" method="post" id="data">
+            <span>
+                Name :   @ViewBag.name ;
+            </span>
+
+            <span>
+                Full Name : @ViewData["Fullname"] ;
+            </span>
+            <label for="fullname">Full Name</label>
+            <input type="text" id="fullname" name="fullname" value="@txtfullname" required>
+            <input type="hidden" id="userid" value="@userid">
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" value="@txtemail" required>
+
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" value="@txtphone" required>
+
+            <label for="state">State</label>
+            <input type="text" id="state" name="state" vlaue="@txtstate" required>
+
+            <label for="city">City</label>
+            <input type="text" id="city" name="city" value="@txtcity" required>
+
+            <label for="gender">Gender</label>
+            <div class="gender-group" id="gender" value="@txtgender">
+                <label><input type="radio" name="gender" value="male" @(txtgender == "male" ? "checked" : "")> Male</label>
+                <label><input type="radio" name="gender" value="female" @(txtgender == "female" ? "checked" : "")> Female</label>
+            </div>
+
+            <label for="course">Course</label>
+            <input type="text" id="course" name="course" value="@txtcourse" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" value="@txtpassword" required>
+
+            <button type="submit" id="submit">Register</button>
+
+        </form>
+    </div>
+
+</body>
+</html>
+<script src="~/Scripts/JavaScript.js"></script>
+<script src="~/Scripts/jquery-3.7.0.min.js"></script>

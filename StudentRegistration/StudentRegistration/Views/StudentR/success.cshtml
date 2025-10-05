@@ -1,0 +1,177 @@
+﻿
+@{
+    ViewBag.Title = "success";
+}
+
+@*<h2>success</h2>*@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Registration Form</title>
+    <link href="~/stnrel/students.css" rel="stylesheet" />
+    @*<link href="~/stnrel/student.css" rel="stylesheet" />*@
+</head>
+<body>
+    <div class="container">
+        <h2>Student Registration Form</h2>
+        <form>
+
+            <!-- Personal Information -->
+            <div class="form-section">
+                <h4>Personal Information</h4>
+                <div class="row">
+                    <div class="form-group col-50">
+                        <label>First Name</label>
+                        <input type="text" id="txtname" required />
+                    </div>
+                    <div class="form-group col-50">
+                        <label>Last Name</label>
+                        <input type="text" id="txtlst" required />
+                    </div>
+                    <div class="form-group col-50">
+                        <label>Date of Birth</label>
+                        <input type="date" id="txtdob" required />
+                    </div>
+                    <div class="form-group col-50">
+                        <label>Gender</label>
+                        <select id="txtgen" required>
+                            <option value="">Select</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="Other">other</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-50">
+                        <label>Aadhar Number</label>
+                        <input type="text" maxlength="12" id="txtadhr" required />
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="form-section">
+                <h4>Contact Information</h4>
+                <div class="row">
+                    <div class="form-group col-50">
+                        <label>Email</label>
+                        <input type="email" id="txteml" required />
+                    </div>
+                    <div class="form-group col-50">
+                        <label>Phone Number</label>
+                        <input type="tel" id="txtphn" maxlength="10" />
+                    </div>
+                    <div class="form-group col-100">
+                        <label>Address</label>
+                        <textarea rows="2" id="txtaddres" required></textarea>
+                    </div>
+                    <div class="form-group col-50">
+                        <label>City</label>
+                        <input type="text" id="txtcity" />
+                    </div>
+                    <div class="form-group col-50">
+                        <label>State</label>
+                        <input type="text" id="txtstate"/>
+                    </div>
+                    <div class="form-group col-50">
+                        <label>Zip Code</label>
+                        <input type="text" id="txtzip"/>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Academic Details -->
+            <div class="form-section">
+                <h4>Academic Details</h4>
+                <div class="row">
+                    <div class="form-group col-50">
+                        <label>High School (10th) %</label>
+                        <input type="text" id="txthigh" />
+                    </div>
+                    <div class="form-group col-50">
+                        <label>Intermediate (12th) %</label>
+                        <input type="text" id="txtinter"/>
+                    </div>
+                    <div class="form-group col-50">
+                        <label>Graduation (UG)</label>
+                        <input type="text" id="txtug"/>
+                    </div>
+                    <div class="form-group col-50">
+                        <label>Post-Graduation (PG)</label>
+                        <input type="text" id="txtpg"/>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course Details -->
+            <div class="form-section">
+                <h4>Course Selection</h4>
+                <div class="row">
+                    <div class="form-group col-50">
+                        <label>Course</label>
+                        <select id="txtcourse" required>
+                            <option value="">Select</option>
+                            <option value="Bsc">Bsc</option>
+                            <option value="Bcom">B.Com</option>
+                            <option value="BA">B.A</option>
+                            <option value="Msc">M.Sc</option>
+                            <option value="MBA">MBA</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-50">
+                        <label>Academic Session</label>
+                        <input type="text" id="txtacd" placeholder="e.g. 2025-2026" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- Document Upload -->
+            <div class="form-section">
+                <h4>Document Upload</h4>
+                <div class="row">
+                    <div class="form-group col-50">
+                        <label>Upload Photo</label>
+                        <input type="file" id="txtload" />
+                    </div>
+                    <div class="form-group col-50">
+                        <label>Upload ID Proof</label>
+                        <input type="file" id="txtloaded"/>
+                    </div>
+                </div>
+            </div>
+
+            <span><b>Select your Hobbies</b></span>
+            <div id="hobbySection">
+                <label>
+                    <input type="checkbox" name="hobbies" value="Reading" />
+                    Reading
+                </label><br>
+
+                <label>
+                    <input type="checkbox" name="hobbies" value="Traveling" />
+                    Traveling
+                </label><br>
+
+                <label>
+                    <input type="checkbox" name="hobbies" value="Music" />
+                    Music
+                </label><br>
+            </div>
+
+
+            <!-- Terms and Submit -->
+            <div class="form-section">
+                <div class="form-check">
+                    <input type="checkbox" required />
+                    <label>I confirm that the above information is true.</label>
+                </div>
+                <br />
+                <button type="submit">Submit Registration</button>
+            </div>
+
+        </form>
+    </div>
+</body>
+</html>
+<script src="~/stnrel/logic.js"></script>

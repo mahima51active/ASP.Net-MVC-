@@ -1,0 +1,93 @@
+﻿
+@{
+    ViewBag.Title = "employeeform";
+}
+
+<h2>employeeform</h2>
+<html>
+<head>
+    <style>
+        .main input, select, textarea{
+            width:100%;
+            height:30px;
+            margin-top:50px;
+            background-color:darksalmon;
+            border:dashed 2px solid red;
+            border-block:dotted;
+        }
+
+        body {
+            border: dashed 2px solid dotted;
+            width:100%;
+            text-align:center;
+            font-size:large;
+            border-block:dotted;
+        }
+
+        .alert-success{
+            font-size:20px; 
+        }
+
+        button {
+            height: 38px;
+            width: 100px;
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <form class="main" id="data">
+        <div class="ashu">
+            <div>
+                <lable>Employee Code</lable>
+                <input type="text" value="" id="txtempid" readonly />
+            </div>
+
+            <div>
+                <lable>Firstname</lable>
+                <input type="text"  value="" id="txtempfirstname" />
+            </div>
+
+            <div>
+                <label>Lastname</label>
+                <input type="text" value="" id="txtemplastname" />
+            </div>
+
+            <div>
+                <lable>Address</lable>
+                <textarea value="" id="txtaddress"></textarea>
+            </div>
+
+            <div>
+                <lable>Phoneno</lable>
+                <input type="number" id="txtphone" />
+            </div>
+
+            <div>
+                <label>Salary</label>
+                <input type="text" id="txtsalary" />
+            </div>
+
+            <div>
+                <label>Designation</label>
+                <select>
+                    <option value="Manager">Manager</option>
+                    <option value="Team Leader">Team Leader</option>
+                    <option value="Sr Team Member">Sr Team Member</option>
+                    <option value="Jr Team Member">Jr Team Member</option>
+                </select>
+            </div>
+
+            <div class="alert-success">
+                <button>Add</button>
+                <button>Exit</button>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
+<script src="~/Scripts/jquery-3.7.0.min.js"></script>
+<script src="~/Scripts/JavaScript.js"></script>
+
+ 

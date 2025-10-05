@@ -1,0 +1,252 @@
+﻿@using System.Data;
+@using System.Data.SqlClient;
+@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+
+@{string userid = "0";
+    string txtfullname = "";
+    string txtemail = "";
+    string txtphone = "";
+    string txtaddress = "";
+    string txtcity = "";
+    string txtstate = "";
+    string txtpin = "";
+    string txtquali = "";
+    string txtuniversity = "";
+    string txtyear = "";
+
+    DataTable data = ViewBag.edit as DataTable;
+
+    if (ViewBag.id != null && data != null && data.Rows.Count > 0)
+    {
+        DataRow row = data.Rows[0];
+
+        userid = row["user_id"].ToString();
+        txtfullname = row["user_fullname"].ToString();
+        txtemail = row["user_Email"].ToString();
+        txtphone = row["user_Phone"].ToString();
+        txtaddress = row["user_address"].ToString();
+        txtcity = row["user_city"].ToString();
+        txtstate = row["user_state"].ToString();
+        txtpin = row["user_pin"].ToString();
+        txtquali = row["user_quali"].ToString();
+        txtuniversity = row["user_university"].ToString();
+        txtyear = row["user_year"].ToString();
+    }
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Long Registration Form</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .form-container {
+            max-width: 700px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            overflow-y: auto;
+        }
+
+        form h2 {
+            margin-top: 30px;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin: 15px 0 5px;
+            font-weight: bold;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        hr {
+            margin: 30px 0;
+        }
+
+        .form-footer {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        button[type="submit"] {
+            background-color: #28a745;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+            button[type="submit"]:hover {
+                background-color: #218838;
+            }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <form id="longForm">
+            <h2>Personal Information</h2>
+
+            <label>Full Name *</label>
+            <input type="text" id="fullname" value="@txtfullname" name="fullname">
+            <input type="hidden" id="userid" value="@userid">
+
+            <label>Email *</label>
+            <input type="email" id="email" value="@txtemail" name="email">
+
+            <label>Phone *</label>
+            <input type="tel" id="phone" value="@txtphone" name="phone">
+
+            <hr />
+
+            <h2>Address Details</h2>
+
+            <label>Address Line 1</label>
+            <input type="text" id="address1" value="@txtaddress" name="address1">
+
+            <label>City</label>
+            <input type="text" id="city" value="@txtcity" name="city">
+
+            <label>State</label>
+            <input type="text" id="state" value="@txtstate" name="state">
+
+            <label>Pin</label>
+            <input type="text" id="pincode" value="@txtpin" name="pincode">
+
+            <hr />
+
+            <h2>Education Information</h2>
+
+            <label>Highest Qualification</label>
+            <input type="text" id="qualification" value="@txtquali" name="qualification">
+
+            <label>University</label>
+            <input type="text" id="university" value="@txtuniversity" name="university">
+
+            <label>Passing Year</label>
+            <input type="text" id="year" value="@txtyear" name="year">
+
+            <!-- Add more sections as needed -->
+
+            <div class="form-footer">
+                <button type="submit" id="click">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+<script src="~/Scripts/jquery-3.7.0.min.js"></script>
+<script>
+    document.getElementById('longForm').addEventListener('submit', function (e) {
+        insertop();
+    });
+
+    function insertop() {
+        e.preventDefault();
+
+        const userid = document.getElementById('userid').value.trim();
+        const fullname = document.getElementById('fullname').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const address = document.getElementById('address1').value.trim();
+        const city = document.getElementById('city').value.trim();
+        const state = document.getElementById('state').value.trim();
+        const pin = document.getElementById('pincode').value.trim();
+        const quali = document.getElementById('qualification').value.trim();
+        const university = document.getElementById('university').value.trim();
+        const year = document.getElementById('year').value.trim();
+
+        //if (name === '') { alert("Please enter your full name!"); return; }
+        //if (email === '') { alert("Please enter your email correctly!"); return; }
+        //if (!email.includes('@') || !email.includes('.')) { alert("Enter a valid email address!"); return; }* @
+         //if (phone === '') { alert("Please enter your phone number!"); return; }
+         //if (!/^\d{10}$/.test(phone)) { alert("Phone number must be exactly 10 digits!"); return; }
+         //if (address === '') { alert("Please enter your address correctly!"); return; }
+         //if (state === '') { alert("Please enter your state correctly!"); return; }
+         //if (city === '') { alert("Please enter your city correctly!"); return; }
+         //if (pin === '') { alert("Please enter your pin correctly!"); return; }
+         //if (quali === '') { alert("Please enter your quali correctly!"); return; }
+         //if (university === '') { alert("Please enter your university correctly!"); return; }
+         //if (year === '') { alert("Please enter your year correctly!"); return; }
+
+            const formData = {
+            userid: userid,
+            fullname: fullname,
+            Email: email,
+            Phone: phone,
+            address: address,
+            city: city,
+            State: state,
+            pin: pin,
+            quali: quali,
+            university: university,
+            year: year
+        };
+        if (userid === "0") {
+            $.ajax({
+                url: '/good/insert',
+                type: 'POST',
+                data: formData, // Sending as application/x-www-form-urlencoded
+                success: function (data) {
+                    $('#result').html(data.message || "Registration successful!");
+                    Swal.fire({
+                        title: "Registration",
+                        text: "Successful!!",
+                        icon: "success"
+                    });
+
+                    //window.location.href = "/abc/dashboard";
+                },
+                error: function (xhr, status, error) {
+                    console.error("Error:", error);
+                }
+            });
+        }
+        else {
+            debugger;
+
+            $.ajax({
+                url: '/good/update', // Adjust to your actual controller/action
+                type: 'POST',
+                data: formData,
+                success: function (data) {
+                    $('#result').html(data.message || "Update successful!");
+                    alert("Updates Successful!");
+                    window.location.href = '/good/listing';
+                },
+                error: function (xhr, status, error) {
+                    console.error("Error:", error);
+                }
+            });
+        }
+
+
+    }
+</script>
+

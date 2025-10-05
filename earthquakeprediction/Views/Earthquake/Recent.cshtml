@@ -1,0 +1,77 @@
+﻿@model IEnumerable<earthquakeprediction.Models.EarthquakeModel>
+@{
+    ViewBag.Title = "Recent Earthquakes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Recent Earthquakes (Last 24 Hours)</h2>
+<p class="text-muted">Live data from USGS - sorted by magnitude (highest first).</p>
+
+<div class="row">
+    <div class="col-lg-6">
+        <table class="table table-sm table-striped table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th>Magnitude</th>
+                    <th>Location</th>
+                    <th>Local Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var q in Model)
+                {
+                    var level = q.Magnitude >= 6 ? "danger" : q.Magnitude >= 4 ? "warning" : "success";
+                    <tr>
+                        <td><span class="badge bg-@level">@q.Magnitude.ToString("0.0")</span></td>
+                        <td>@q.Location</td>
+                        <td>@q.LocalDateTime.ToString("g")</td>
+                    </tr>
+                }
+                @*<canvas id="earthquakeChart" width="400" height="200"></canvas>*@
+
+            </tbody>
+        </table>
+    </div>
+    <div class="col-lg-6">
+        <div id="map" style="height:400px;"></div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+@section scripts {
+    <script>
+        var map = L.map('map').setView([20, 0], 2);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 10,
+            attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
+
+        function magColor(m) {
+            return m >= 6 ? '#d73027' :
+                m >= 5 ? '#fc8d59' :
+                    m >= 4 ? '#fee08b' :
+                        m >= 3 ? '#d9ef8b' :
+                            m >= 2 ? '#91cf60' : '#1a9850';
+        }
+
+        fetch('/Earthquake/RecentJson')
+            .then(r => r.json())
+            .then(data => {
+                data.forEach(e => {
+                    var circle = L.circleMarker([e.Latitude, e.Longitude], {
+                        radius: Math.max(4, e.Magnitude * 1.6),
+                        color: '#000',
+                        weight: 0.5,
+                        fillColor: magColor(e.Magnitude),
+                        fillOpacity: 0.85
+                    }).addTo(map);
+                    var date = new Date(e.Time);
+                    circle.bindPopup(
+                        '<strong>Mag:</strong> ' + e.Magnitude.toFixed(1) + '<br/>' +
+                        '<strong>Location:</strong> ' + e.Location + '<br/>' +
+                        '<strong>Time:</strong> ' + date.toLocaleString()
+                    );
+                });
+            });
+    </script>
+}

@@ -1,0 +1,90 @@
+﻿
+@{
+    ViewBag.Title = "indexx";
+    //Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earthquake Data Visualization</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #e0cbb4;
+            color: #333;
+            background-image: url('/images/AdobeStock_254722956.jpeg');
+        }
+
+        header {
+            background-color: #80deb6;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav {
+            background: #34495e;
+            display: flex;
+            justify-content: center;
+            padding: 0.5rem;
+        }
+
+            nav a {
+                color: white;
+                margin: 0 1rem;
+                text-decoration: none;
+            }
+
+        main {
+            padding: 2rem;
+        }
+
+        footer {
+            background-color: #80deb6;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <img src="~/images/bg.jpg.png" alt="Upload" style="width: 100%; height:70%; cursor: pointer;">
+    <header>
+        <h1>Earthquake Data Visualization</h1>
+        <p>Interactive dashboard to monitor seismic activity worldwide</p>
+    </header>
+
+    <nav>
+        <a href="/Home/Index">Home</a>
+        @*<a href="/Home/Index">Map</a>*@
+        @*<a href="#">Charts</a>*@
+        <a href="/Home/About">About</a>
+        <a href="/Home/Contact">Contact</a>
+    </nav>
+
+    <main>
+        <h2>Welcome!</h2>
+        <p>This project provides an interactive visualization of earthquake data. Users can explore seismic activity based on location, magnitude, and time using live maps and graphs.</p>
+
+        <h3>Key Features:</h3>
+        <ul>
+            <li>Real-time earthquake data from USGS</li>
+            <li>Interactive map view with filters</li>
+            <li>Charts showing historical patterns</li>
+        </ul>
+    </main>
+
+    <footer>
+        <p>Data from USGS | Created by [Your Name]</p>
+    </footer>
+</body>
+</html>
+

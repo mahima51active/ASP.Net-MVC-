@@ -1,0 +1,148 @@
+﻿@*@{
+        ViewBag.Title = "Earthquake Graph";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+    <h2>Earthquake Magnitude Graph (Past & Predicted)</h2>
+    <canvas id="quakeChart" width="1000" height="400"></canvas>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        fetch('/Earthquake/GetEarthquakeGraphData')
+            .then(res => res.json())
+            .then(data => {
+                const labels = data.map(q => q.time);
+                const magnitudes = data.map(q => q.magnitude);
+
+                const ctx = document.getElementById('quakeChart').getContext('2d');
+                const quakeChart = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: 'Magnitude',
+                            data: magnitudes,
+                            borderColor: 'rgb(255, 99, 132)',
+                            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                            tension: 0.2
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            y: {
+                                title: { display: true, text: 'Magnitude' },
+                                beginAtZero: true
+                            },
+                            x: {
+                                title: { display: true, text: 'Date' }
+                            }
+                        }
+                    }
+                });
+            });
+    </script>*@
+@{
+    ViewBag.Title = "Earthquake Graph";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Page Title -->
+<div class="container mt-5">
+    <div class="text-center mb-4">
+        <h2 class="display-6 fw-bold text-primary">📈 Earthquake Magnitude Graph</h2>
+        <p class="lead text-muted">Comparison of past and predicted earthquake magnitudes</p>
+    </div>
+
+    <!-- Stylish Card Container -->
+    <div class="card shadow p-4 mb-5" style="border-radius: 15px; background: #ffffff;">
+        <canvas id="quakeChart" height="400"></canvas>
+    </div>
+</div>
+
+<!-- Chart.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- Custom Chart Script -->
+<script>
+    fetch('/Earthquake/GetEarthquakeGraphData')
+        .then(res => res.json())
+        .then(data => {
+            const labels = data.map(q => q.time);
+            const magnitudes = data.map(q => q.magnitude);
+
+            const ctx = document.getElementById('quakeChart').getContext('2d');
+            const quakeChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Earthquake Magnitude',
+                        data: magnitudes,
+                        borderColor: '#00796b',
+                        backgroundColor: 'rgba(0, 121, 107, 0.2)',
+                        tension: 0.3,
+                        pointBackgroundColor: '#004d40',
+                        pointBorderColor: '#004d40',
+                        pointRadius: 4,
+                        pointHoverRadius: 6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            display: true,
+                            labels: {
+                                color: '#333',
+                                font: {
+                                    size: 14,
+                                    weight: 'bold'
+                                }
+                            }
+                        },
+                        tooltip: {
+                            backgroundColor: '#00796b',
+                            titleFont: { weight: 'bold' },
+                            bodyFont: { size: 13 },
+                            padding: 10
+                        }
+                    },
+                    scales: {
+                        y: {
+                            title: {
+                                display: true,
+                                text: 'Magnitude',
+                                color: '#333',
+                                font: { size: 14, weight: 'bold' }
+                            },
+                            beginAtZero: true,
+                            ticks: {
+                                color: '#555'
+                            },
+                            grid: {
+                                color: 'rgba(0,0,0,0.05)'
+                            }
+                        },
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Date & Time',
+                                color: '#333',
+                                font: { size: 14, weight: 'bold' }
+                            },
+                            ticks: {
+                                color: '#555',
+                                maxRotation: 45,
+                                minRotation: 30
+                            },
+                            grid: {
+                                color: 'rgba(0,0,0,0.05)'
+                            }
+                        }
+                    }
+                }
+            });
+        });
+</script>
+

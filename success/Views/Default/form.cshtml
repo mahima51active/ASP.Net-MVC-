@@ -1,0 +1,116 @@
+﻿@using System.Data;
+@using System.Data.SqlClient;
+@{
+    ViewBag.Title = "form";
+}
+
+@{
+    string userid = "0";
+    string fullname = "";
+    string email = "";
+    string phone = "";
+    string gender = "";
+    string dob = "";
+    string address = "";
+    string state = "";
+    string city = "";
+    string pincode = "";
+
+
+    DataTable data = ViewBag.Editdata as DataTable;
+
+    if (ViewBag.id != null && data != null && data.Rows.Count > 0)
+    {
+        DataRow row = data.Rows[0];
+
+        userid = row["FRM_Id"].ToString();
+        fullname = row["fullname"].ToString();
+        email = row["email"].ToString();
+        phone = row["phone"].ToString();
+        gender = row["gender"].ToString();
+        dob = row["date"].ToString();
+        address = row["address"].ToString();
+        state = row["state"].ToString();
+        city = row["city"].ToString();
+        pincode = row["pincode"].ToString();
+    }
+
+}
+
+<h2>form</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+    @*<link rel="stylesheet" href="style.css">*@
+
+    <link href="~/styling/features.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="container">
+        <h2>Student Registration Form</h2>
+        <form>
+            <div class="form-group">
+                <label for="fullname">FullName</label>
+                <input type="text" id="fullname" value="@fullname" name="fullname">
+                <input type="hidden" id="userid" value="@userid">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" value="@email" name="email">
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" value="@phone" maxlength="10">
+            </div>
+
+            <div class="form-group">
+                <label for="gender">Gender</label>
+                <select id="gender" name="gender">
+                    <option value="">Select Gender</option>
+                    <option value="male"  @(gender == "male" ? "selected" : "") >Male</option>
+                    <option value="female" @(gender == "female" ? "selected" : "")>Female</option>
+                    <option value="other" @(gender == "other" ? "selected" : "")>Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="dob">Date of Birth</label>
+                <input type="date" id="dob" value="@dob" name="dob">
+            </div>
+
+            <div class="form-group">
+                <label for="address">Address</label>
+                <textarea id="address" name="address" value="@address" rows="3"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="state">State</label>
+                <input type="text" id="state" value="@state" name="state">
+            </div>
+
+            <div class="form-group">
+                <label for="city">City</label>
+                <input type="text" id="city" value="@city" name="city">
+            </div>
+
+            <div class="form-group">
+                <label for="pincode">Pincode</label>
+                <input value="@pincode" type="text" id="pincode" name="pincode" maxlength="6">
+            </div>
+
+            <div class="form-group">
+                <button type="submit" id="click">Submit</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
+<script src="~/Scripts/jquery-3.7.0.min.js"></script>
+<script src="~/styling/JavaScript.js"></script>

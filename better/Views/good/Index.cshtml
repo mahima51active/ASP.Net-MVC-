@@ -1,0 +1,162 @@
+﻿@using System.Data;
+@using System.Data.SqlClient;
+@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+
+@{
+    string userid = "0";
+    string txtfullname = "";
+    string txtemail = "";
+    string txtphone = "";
+    string txtaddress = "";
+    string txtcity = "";
+    string txtstate = "";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 350px;
+        }
+
+        form h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            margin-top: 20px;
+            width: 100%;
+            padding: 10px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+            button:hover {
+                background: #0056b3;
+            }
+    </style>
+</head>
+<body>
+
+    <div class="form-container" >
+        <form id="loginform">
+            <h2>Registration Form</h2>
+
+            <label for="fullname">Full Name</label>
+            <input type="text" id="fullname" value="@txtfullname" name="fullname">
+            <input type="hidden" id="userid" value="@userid" name="userid">
+
+            <label for="email">Email</label>
+            <input type="email" id="email" value="@txtemail" name="email">
+
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" value="@txtphone" name="phone">
+
+            <label for="password">Address</label>
+            <input type="text" id="address" value="@txtaddress" name="address">
+
+            <label for="password">city</label>
+            <input type="text" id="city" value="@txtcity" name="city">
+
+            <label for="password">state</label>
+            <input type="text" id="state" value="@txtstate" name="state">
+
+            <button type="submit" id="click">Register</button>
+        </form>
+    </div>
+
+</body>
+</html>
+<script src="~/Scripts/jquery-3.7.0.min.js"></script>
+<script>
+    document.getElementById('loginform').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    //declare variables for getting data into the variables
+    const userid = document.getElementById('userid').value.trim();
+    const fullname = document.getElementById('fullname').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const address = document.getElementById('address').value.trim();
+    const city = document.getElementById('city').value.trim();
+    const state = document.getElementById('state').value.trim();
+
+
+    if (userid === "") { alert("please fill the form correctly"); return; }
+    if (fullname === "") { alert("please Enter your fullname correctly"); return; }
+    if (email === "") { alert("please Enter your email correctly"); return; }
+    @*if (!email.includes('@') || !email.includes('.')) { alert("Enter a valid email address!"); return; }*@
+    if (phone === "") { alert("please enter your phone numner correctly"); return; }
+    if (address === "") { alert("please enteer your address correctly"); return; }
+    if (city === "") { alert("please enter your city correctly"); return; }
+    if (state === "") { alert("please enter your state correctly"); return; }
+
+    const formdata = {
+        userid = userid,
+        fullname = fullname,
+        email = email,
+        phone = phone,
+        address = address,
+        city = city,
+        state = state
+    };
+
+
+    $.ajax({
+        url: '/good/insert',
+        type: 'POST',
+        data: formdata, // Sending as application/x-www-form-urlencoded
+        success: function (data) {
+            $('#result').html(data.message || "Registration successful!");
+            Swal.fire({
+                title: "Registration",
+                text: "Successful!!",
+                icon: "success"
+            });
+
+            //window.location.href = "/abc/dashboard";
+        },
+        error: function (xhr, status, error) {
+            console.error("Error:", error);
+        }
+    });
+
+
+
+</script>

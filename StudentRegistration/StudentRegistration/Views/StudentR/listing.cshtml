@@ -1,0 +1,109 @@
+﻿
+@{
+    ViewBag.Title = "listing";
+}
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  margin-top: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+th, td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+th {
+  background-color: #343a40;
+  color: white;
+  position: sticky;
+  top: 0;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+@*@media (max-width: 768px) {
+  th, td {
+    font-size: 12px;
+    padding: 8px;
+  }
+}*@
+</style>
+
+<h2>listing</h2>
+<h1>Student Listing</h1>
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>STUDENT ID</th>
+                <th>FIRST NAME</th>
+                <th>LAST NAME</th>
+                <th>DOB</th>
+                <th>GENDER</th>
+                <th>ADHAR</th>
+                <th>PHONE</th>
+                <th>EMAIL</th>
+                <th>ADDRESS</th>
+                <th>CITY</th>
+                <th>STATE</th>
+                <th>ZIP</th>
+                <th>SSC</th>
+                <th>HSC</th>
+                <th>UG</th>
+                <th>PG</th>
+                <th>COURSE</th>
+                <th>SESSION</th>
+                <th>HOBBIES</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>001</td>
+                <td>Mahima</td>
+                <td>Sharma</td>
+                <td>2002-05-12</td>
+                <td>Female</td>
+                <td>1234-5678-9012</td>
+                <td>9876543210</td>
+                <td>mahima@gmail.com</td>
+                <td>MG Road</td>
+                <td>Pune</td>
+                <td>Maharashtra</td>
+                <td>411001</td>
+                <td>89%</td>
+                <td>85%</td>
+                <td>75%</td>
+                <td>80%</td>
+                <td>CS</td>
+                <td>2023-2025</td>
+                <td>Reading</td>
+            </tr>
+            <!-- Add more rows here -->
+        </tbody>
+    </table>
+</div>
+
+

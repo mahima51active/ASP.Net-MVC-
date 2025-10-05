@@ -1,0 +1,76 @@
+﻿body {
+    font-family: Arial, sans-serif;
+    background-color: lightgrey;
+    padding: 40px;
+}
+
+.container {
+    background: #fff;
+    padding: 30px;
+    max-width: 1410px;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h2 {
+    text-align: center;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input, select, textarea {
+    max-width: 543px;
+}
+
+.gender {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.terms {
+    margin-bottom: 20px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #28a745;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="date"],
+input[type="time"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+
+button:hover {
+    background: #218838;
+}
+
+.error-message {
+    color: red;
+    text-align: center;
+}
+
+input#terms {
+    width: auto;
+}

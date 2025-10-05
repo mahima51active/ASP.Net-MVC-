@@ -1,0 +1,128 @@
+﻿
+@{
+    ViewBag.Title = "form";
+    Layout = null;
+}
+
+<h2>form</h2>
+<html>
+<head>
+    <title>Form</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f7fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        form#detail {
+            width: 790px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 50px 40px;
+            border-radius: 10px;
+            box-shadow: initial;
+            font-size: larger;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+
+            input[type="text"]:focus,
+            input[type="email"]:focus,
+            select:focus {
+                border-color: #007bff;
+                outline: none;
+            }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 14px 20px;
+            margin-top: 30px;
+            width: 100%;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+            input[type="submit"]:hover {
+                background-color: #0056b3;
+            }
+
+    </style>
+
+</head>
+
+<body>
+    <form id="detail">
+        <label>Fullname</label>
+        <input type="text" value="" id="fullname" placeholder="" />
+
+        <label>Email</label>
+        <input type="email" value="" id="email" placeholder="" />
+
+        <label>Course</label>
+        <select id="course" value="">
+            <option value="Btech">Btech</option>
+            <option value="Bsc">Bsc</option>
+            <option value="MCA">MCA</option>
+            <option value="MBA">MBA</option>
+            <option value="Mtech">Mtech</option>
+        </select>
+
+        <label>gender</label>
+        <input type="radio" value="" id="gender" placeholder="" />
+
+        <label>phone</label>
+        <input type="text" value="" id="phone" placeholder="" />
+
+        <label>Address</label>
+        <input type="text" value="" id="" placeholder="" />
+
+        <label>City</label>
+        <select id="city" value="">
+            <option value="CHENNAI">CHENNAI</option>
+            <option value="HYDERABAD">HYDERABAD</option>
+            <option value="PUNE">PUNE</option>
+            <option value="BANGLORE">BANGLORE</option>
+        </select>
+
+        <label>State</label>
+        <select id="state" value="">
+            <option value="UP">UP</option>
+            <option value="GH">GH</option>
+            <option value="RT">RT</option>
+            <option value="ST">ST</option>
+        </select>
+
+        <label>Country</label>
+        <select id="country" value="">
+            <option value="ASIA">ASIA</option>
+            <option value="RUSSIA">RUSSIA</option>
+            <option value="CHINA">CHINA</option>
+            <option value="EUROPE">EUROPE</option>
+        </select>
+
+        <lable>Comment</lable>
+        <input type="text" id="comment" value="" placeholder="" />
+
+        <button id="submit">submit</button>
+
+    </form>
+</body>
+</html>

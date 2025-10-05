@@ -1,0 +1,127 @@
+﻿@using System.Data;
+@using System.Data.SqlClient;
+@{
+    ViewBag.Title = "Registrations";
+
+    //var data = ViewBag.Editdata;
+}
+@{
+    string userid = "0";
+    string txtname = "";
+    string txtemail = "";
+    string txtpass = "";
+    string txtmbl = "";
+    string txtgender = "";
+    string txtcountry = "";
+    string txtstate = "";
+    string txtdate = "";
+    
+
+    DataTable data = ViewBag.Editdata as DataTable;
+
+    if (ViewBag.id != null && data != null && data.Rows.Count > 0)
+    {
+        DataRow row = data.Rows[0];
+
+        userid = row["Id"].ToString();
+        txtname = row["Name"].ToString();
+        txtemail = row["Email"].ToString();
+        txtpass = row["Password"].ToString();
+        txtmbl = row["Phone"].ToString();
+        txtgender = row["Gender"].ToString();
+        txtcountry = row["Country"].ToString();
+        txtstate = row["State"].ToString();
+        txtdate = row["date"].ToString();
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+<link href="~/mycssandjs/css/form.css" rel="stylesheet" />
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>validation form</title>
+</head>
+<button onclick="window.location.href='@Url.Action("listing", "Form")'">Listing</button>
+
+<body>
+    <div class="container">
+        <h2>Registration Form</h2>
+        <form id="registrationForm">
+            <label>Full Name:</label>
+            <input type="text" id="name" value="@txtname" placeholder="Enter your full name">
+            <input type="hidden" id="userid" value="@userid">
+
+            <label>Email:</label>
+            <input type="email" id="email" value="@txtemail" placeholder="Enter your email">
+
+            <label>Phone Number:</label>
+            <input type="text" id="phone" value="@txtmbl" placeholder="Enter 10-digit number" maxlength="10">
+
+            <label>Password:</label>
+            <input type="password" id="password" value="@txtpass" placeholder="Enter password">
+
+            <label>Confirm Password:</label>
+            <input type="password" id="confirmPassword" value="@txtpass" placeholder="Confirm your password">
+
+            <label>Gender:</label>
+            <div class="gender">
+                <input type="radio" name="gender" value="male" id="male" @(txtgender.ToLower() == "male" ? "checked" : "")> <label for="male">Male</label>
+                <input type="radio" name="gender" value="female" id="female" @(txtgender.ToLower() == "female" ? "checked" : "")> <label for="female">Female</label>
+            </div>
+
+            <label>Country:</label>
+            <select id="country" name="country">
+                <option value="">Select Country</option>
+                <option value="India" @(txtcountry == "India" ? "selected" : "")>India</option>
+                <option value="USA" @(txtcountry == "USA" ? "selected" : "")>USA</option>
+                <option value="UK" @(txtcountry == "UK" ? "selected" : "")>UK</option>
+                <option value="Australia" @(txtcountry == "Australia" ? "selected" : "")>Australia</option>
+            </select>
+
+
+            <label>State:</label>
+            <select id="State" name="State">
+                <option value="">Select State</option>
+                <option value="maharashtra" @(txtstate == "maharashtra" ? "selected" : "")>maharashtra</option>
+                <option value="odisaa" @(txtstate == "odisaa" ? "selected" : "")>odisaa</option>
+                <option value="uk" @(txtstate == "uk" ? "selected" : "")>uk</option>
+                <option value="chennai" @(txtstate == "chennai" ? "selected" : "")>chennai</option>
+            </select>
+
+            <label for="date">Select Date:</label>
+            <input type="date"  value="@txtdate" id="date"  name="date">
+
+            <label for="time">Select Time:</label>
+            <input type="time" id="time" name="time">
+
+
+            <label>file:</label>
+            <input type="file" name="resume">
+            <div class="terms">
+                <input type="checkbox" id="terms">
+                <label for="terms">I agree to the Terms & Conditions</label>
+            </div>
+
+            <p class="error-message" id="error"></p>
+            <button type="submit" id="submitBtn">Register</button>
+        </form>
+    </div>
+
+</body>
+</html>
+<script src="~/Scripts/jquery-3.7.0.min.js"></script>
+
+<script src="~/mycssandjs/js/form.js"></script>
+
+
